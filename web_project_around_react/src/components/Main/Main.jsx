@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import NewCard from "./NewCard/NewCard";
+import NewCard from "../form/NewCard/NewCard";
 import EditProfile from "./EditProfile/EditProfile";
 import EditAvatar from "./EditAvatar/EditAvatar";
 import Popup from "./Popup/Popup";
@@ -8,9 +8,9 @@ import avatar from "../../images/image.jpg";
 import { Api } from "../../api/Api";
 
 const api = new Api({
-  baseUrl: "https://api.around-the-us.com",
+  baseUrl: "https://around-api.es.tripleten-services.com/v1",
   headers: {
-    Authorization: "Bearer your-token-here",
+    authorization: "084f2569-7956-4ef8-b32d-d13cde68eeac",
     "Content-Type": "application/json",
   },
 });

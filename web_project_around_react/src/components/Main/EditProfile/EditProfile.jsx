@@ -1,28 +1,28 @@
 export default function EditProfile() {
   return (
     <section
-      class="popup popup_type_edit-profile"
+      className="popup popup_type_edit-profile"
       id="editPopup"
       role="dialog"
       aria-labelledby="editPopupTitle"
     >
-      <div class="popup__content">
-        <h2 class="visually-hidden">Formulario de Edición de Perfil</h2>
+      <div className="popup__content">
+        <h2 className="visually-hidden">Formulario de Edición de Perfil</h2>
         <button
-          class="popup__close-template-button"
+          className="popup__close-template-button"
           id="closeEditPopupButton"
           type="button"
           title="Cerrar"
           aria-label="Cerrar"
         ></button>
-        <h3 class="popup__title" id="editPopupTitle">
+        <h3 className="popup__title" id="editPopupTitle">
           Editar perfil
         </h3>
-        <form class="form form_type_popup" name="editProfile" novalidate>
-          <div class="form__field">
+        <form className="form form_type_popup" name="editProfile" novalidate>
+          <div className="form__field">
             <label for="editName">Nombre:</label>
             <input
-              class="form__input"
+              className="form__input"
               type="text"
               name="name"
               id="editName"
@@ -34,10 +34,10 @@ export default function EditProfile() {
             />
             <span id="editName-error" class="form__input-error"></span>
           </div>
-          <div class="form__field">
+          <div className="form__field">
             <label for="editText">Acerca de mí:</label>
             <input
-              class="form__input"
+              clasName="form__input"
               type="text"
               name="job"
               id="editText"
@@ -50,7 +50,7 @@ export default function EditProfile() {
             <span id="editText-error" class="form__input-error"></span>
           </div>
           <button
-            class="button popup__button-submit"
+            className="button popup__button-submit"
             type="submit"
             aria-label="Guardar"
           >
