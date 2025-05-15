@@ -1,0 +1,238 @@
+.popup {
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+.popup__content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 430px;
+    z-index: 1000;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    z-index: 999;
+}
+
+.overlay--active {
+    display: block;
+    z-index: 999;
+}
+
+.popupTemplate {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 430px;
+    height: 330px;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.popup--open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup--image-viewer {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: auto;
+    height: auto;
+}
+
+.popup__image {
+    border-radius: 10px;
+    max-width: 75vw;
+    max-height: 75vh;
+    object-fit: contain;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup__close-button:hover {
+    opacity: 0.6;
+}
+
+.popup__form {
+    display: flex;
+    position: relative;
+    top: 0;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.popup__form input[type="text"],
+.popup__form input[type="url"] {
+    margin-bottom: 10px;
+}
+
+.popup__button-submit {
+    padding: 10px;
+    background: #000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    height: 50.15px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.popup__button-submit:hover {
+    background-color: #545454;
+}
+
+.popup__title {
+    color: #000;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29.05px;
+    width: 330px;
+    height: 23px;
+    font-family: 'Inter';
+}
+
+#closeImageViewerPopupButton {
+    position: relative;
+    left: 800px;
+    bottom: 32px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    background-image: url('../images/Close Icon.png');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    padding-left: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+#popupImageName {
+    display: block;
+    position: relative;
+    bottom: 0;
+    margin-left: 0;
+    color: #fff;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    width: auto;
+    height: auto;
+    font-family: 'Inter';
+    z-index: 1000;
+}
+
+.popup--image-viewer .popup__image {
+    position: relative;
+    top: 0;
+    width: auto;
+    height: auto;
+    max-width: 75vw;
+    max-height: 75vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.popup__close-template-button {
+    position: relative;
+    left: 450px;
+    bottom: 62px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    background-image: url('../images/Close Icon.png');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    padding-left: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.visually-hidden {
+    display: none;
+}
+
+@media screen and (max-width: 880px) {
+    .popup {
+        width: 100%;
+        max-width: 282px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .popup__content {
+        width: 100%;
+        max-width: 282px;
+        padding: 25px 22px;
+    }
+
+    .popup__button-submit {
+        width: 100%;
+        max-width: 238px;
+        height: 46px;
+        margin: 0 auto;
+        transform: none;
+    }
+
+    .popup__close-button {
+        top: -36px;
+        right: 0;
+        width: 26px;
+        height: 26px;
+        background-size: 20px;
+    }
+
+    .popup--image-viewer .popup__close-button {
+        top: -36px;
+        right: 0;
+        background-size: 20px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .popup {
+        max-width: 282px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .popup__button-submit {
+        max-width: 238px;
+        margin: 20px auto 0;
+    }
+
+    .popup__close-button {
+        right: 0;
+        width: 20px;
+        height: 20px;
+        background-size: 20px;
+    }
+}
