@@ -1,9 +1,20 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
+import react from "@vitejs/plugin-react";
+import { fileURLToPath } from "url";
+import { dirname, resolve } from "path";
 
-// https://vite.dev/config/
+// Emulación de __dirname para ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "src"),
+      "@images": resolve(__dirname, "images"),
+    },
+  },
   server: {
     port: 3000,
   },

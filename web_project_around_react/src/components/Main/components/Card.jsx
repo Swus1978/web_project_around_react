@@ -1,20 +1,23 @@
-export default function Card() {
+import React from "react";
+
+export default function Card({ card, onClick }) {
+  const { name, link, isLiked } = card;
   return (
-    <li className="card">
-      <img className="card__image" src="#" alt="" />
+    <li className="card-section__card">
+      <img
+        className="card-section__card-img"
+        src={link}
+        alt={name}
+        onClick={onClick}
+      />
+      <button className="card-section__button-delete" type="button" />
+      <h3 className="card-section__card-title">{name}</h3>
       <button
-        aria-label="Delete card"
-        className="card__delete-button"
+        className={`card-section__button-like ${
+          isLiked ? "card-section__button-like_active" : ""
+        }`}
         type="button"
       />
-      <div className="card__description">
-        <h2 className="card__title"></h2>
-        <button
-          aria-label="Like card"
-          type="button"
-          className="card__like-button"
-        />
-      </div>
     </li>
   );
 }
