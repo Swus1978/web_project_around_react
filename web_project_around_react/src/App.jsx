@@ -2,6 +2,7 @@ import React from "react";
 import { Nav } from "./components/Nav";
 import Header from "./components/Header";
 import CardRendering from "./components/CardRendering";
+import Footer from "./components/Footer";
 
 function App() {
   const cards = [
@@ -33,6 +34,7 @@ function App() {
 
         <div className="overlay" id="overlay"></div>
       </main>
+      <Footer />
     </div>
   );
 }
