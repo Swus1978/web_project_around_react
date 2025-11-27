@@ -1,5 +1,4 @@
 import React from "react";
-import "./pages/index.css";
 import { Nav } from "./components/Nav";
 import Header from "./components/Header";
 import CardRendering from "./components/CardRendering";

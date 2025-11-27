@@ -5,7 +5,7 @@ const CardSection = ({ card }) => {
 
   return (
     <div className="card-section__card">
-      <img className="card-section__image" src={link} alt={name} />
+      <img className="card-section__card-img" src={link} alt={name} />
 
       <button
         className="card-section__button-delete"
