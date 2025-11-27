@@ -6,11 +6,3 @@
 @import url("./blocks/popup.css");
 @import url("./blocks/form_popup.css");
 @import url("./blocks/footer.css");
-
-.error {
-  color: red;
-  font-size: 14px;
-  text-align: center;
-  margin: 10px 0;
-
-}

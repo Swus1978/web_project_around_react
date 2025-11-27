@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Header() {
+export const Nav = () => {
   return (
     <nav className="logo">
       <h1 className="logo__title">Around</h1>
@@ -8,4 +8,4 @@ export default function Header() {
       <div className="logo__line"></div>
     </nav>
   );
-}
+};
