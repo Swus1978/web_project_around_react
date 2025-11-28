@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import Popup from "../src/components/Main/Popup/Popup";
+import NewCard from "../src/components/Main/Popup/forms/NewCard/NewCard";
+import EditProfile from "../src/components/Main/Popup/forms/EditProfile/EditProfile";
+import EditAvatar from "../src/components/Main/Popup/forms/EditAvatar/EditAvatar";
+
 import { Nav } from "./components/Nav";
 import Header from "./components/Header";
 import CardRendering from "./components/CardRendering";
 import Footer from "./components/Footer";
 
 function App() {
+  const [popup, setPopup] = useState(null);
+
   const cards = [
     {
       isLiked: false,
@@ -24,16 +31,46 @@ function App() {
     },
   ];
 
+  const newCardPopup = { title: "Nuevo lugar", children: <NewCard /> };
+  const editProfilePopup = {
+    title: "Editar perfil",
+    children: <EditProfile />,
+  };
+  const editAvatarPopup = {
+    title: "Actualizar avatar",
+    children: <EditAvatar />,
+  };
+
+  function handleOpenPopup(popupInfo) {
+    setPopup(popupInfo);
+  }
+
+  function handleClosePopup() {
+    setPopup(null);
+  }
+
   return (
     <div className="page">
       <Nav />
+
       <main>
-        <Header />
+        <Header
+          onEditProfile={() => handleOpenPopup(editProfilePopup)}
+          onAddCard={() => handleOpenPopup(newCardPopup)}
+          onEditAvatar={() => handleOpenPopup(editAvatarPopup)}
+        />
 
         <CardRendering cards={cards} />
 
+        {popup && (
+          <Popup onClose={handleClosePopup} title={popup.title}>
+            {popup.children}
+          </Popup>
+        )}
+
         <div className="overlay" id="overlay"></div>
       </main>
+
       <Footer />
     </div>
   );
